@@ -1,15 +1,15 @@
-use v6.c;
+use v6.d;
 
-class Interval:ver<0.0.1>:auth<cpan:ELIZABETH> is DateTime {
+class Interval:ver<0.0.2>:auth<cpan:ELIZABETH> is DateTime {
     my \interval = Duration.new(3600);
-    method succ() { self + interval }
-    method pred() { self - interval }
+    method succ(::?CLASS:D:) { self + interval }
+    method pred(::?CLASS:D:) { self - interval }
     method seconds(--> 3600) { }
 
     my role Intervaller[\seconds] {
         my \interval = Duration.new(seconds);
-        method succ() { self + interval }
-        method pred() { self - interval }
+        method succ(::?CLASS:D:) { self + interval }
+        method pred(::?CLASS:D:) { self - interval }
         method seconds() { seconds }
     }
 
@@ -95,10 +95,10 @@ Comments and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2020 Elizabeth Mattijsen
+Copyright 2020,2021 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
 =end pod
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4

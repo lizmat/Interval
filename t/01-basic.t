@@ -1,4 +1,4 @@
-use v6.c;
+use v6.*;
 use Test;
 use Interval;
 
@@ -22,3 +22,5 @@ is-deeply $b.seconds, 60, "the interval value ok";
 
 is-deeply $b + 10, Interval[60].new(2020,1,1,0,10,0), 'does addition work';
 is-deeply $b - 10, Interval[60].new(2019,12,31,23,50,0), 'does subtraction work';
+
+# vim: expandtab shiftwidth=4

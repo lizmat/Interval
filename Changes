@@ -2,5 +2,9 @@ Revision history for Interval
 
 {{$NEXT}}
 
+0.0.2  2021-01-30T14:12:50+01:00
+    - Make sure methods take instances only
+    - Update copyright year
+
 0.0.1  2020-04-03T14:07:55+02:00
     - Initial version

@@ -1,22 +1,26 @@
 {
-  "auth" : "cpan:ELIZABETH",
-  "authors" : [
+  "auth": "cpan:ELIZABETH",
+  "authors": [
     "Elizabeth Mattijsen"
   ],
-  "build-depends" : [ ],
-  "depends" : [ ],
-  "description" : "a DateTime that has intervals",
-  "license" : "Artistic-2.0",
-  "name" : "Interval",
-  "perl" : "6.c",
-  "provides" : {
-    "Interval" : "lib/Interval.pm6"
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "a DateTime that has intervals",
+  "license": "Artistic-2.0",
+  "name": "Interval",
+  "perl": "6.c",
+  "provides": {
+    "Interval": "lib/Interval.pm6"
   },
-  "resources" : [ ],
-  "source-url" : "https://github.com/lizmat/Interval",
-  "tags" : [
+  "resources": [
+  ],
+  "source-url": "https://github.com/lizmat/Interval",
+  "tags": [
     "UTILS"
   ],
-  "test-depends" : [ ],
-  "version" : "0.0.1"
+  "test-depends": [
+  ],
+  "version": "0.0.2"
 }
