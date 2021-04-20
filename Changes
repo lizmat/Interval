@@ -2,6 +2,10 @@ Revision history for Interval
 
 {{$NEXT}}
 
+0.0.3  2021-04-20T12:53:17+02:00
+    - Allow for lexical refinement of DateTime
+    - use =begin/=end code in code examples
+
 0.0.2  2021-01-30T14:12:50+01:00
     - Make sure methods take instances only
     - Update copyright year

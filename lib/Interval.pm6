@@ -1,6 +1,6 @@
 use v6.d;
 
-class Interval:ver<0.0.2>:auth<cpan:ELIZABETH> is DateTime {
+class Interval:ver<0.0.3>:auth<cpan:ELIZABETH> is DateTime {
     my \interval = Duration.new(3600);
     method succ(::?CLASS:D:) { self + interval }
     method pred(::?CLASS:D:) { self - interval }
@@ -20,12 +20,14 @@ class Interval:ver<0.0.2>:auth<cpan:ELIZABETH> is DateTime {
     }
 }
 
-multi sub infix:<+>(Interval:D \a, Int:D \b) is export {
+my multi sub infix:<+>(Interval:D \a, Int:D \b) is export(:DEFAULT, :refine) {
     a + Duration.new(a.seconds * b)
 }
-multi sub infix:<->(Interval:D \a, Int:D \b) is export {
+my multi sub infix:<->(Interval:D \a, Int:D \b) is export(:DEFAULT, :refine) {
     a - Duration.new(a.seconds * b)
 }
+
+BEGIN EXPORT::refine::<DateTime> := Interval;
 
 =begin pod
 
@@ -35,17 +37,28 @@ Interval - a DateTime that has intervals
 
 =head1 SYNOPSIS
 
-  use Interval;
+=begin code :lang<raku>
 
-  my $a = Interval.new(2020,1,1,0,0,0);   # from 2020, interval of 1 hour
-  say $a;  # 2020-01-01T00:00:00Z
-  $a++;    # 2020-01-01T01:00:00Z         # one hour later
-  say $a.seconds;  # 3600
+use Interval;          # just export the Interval class
 
-  my $b = Interval[60].new(time);         # from now, interval of 1 minute
-  say $b;  # 2020-04-03T11:42:09Z
-  $b += 10;
-  say $b;  # 2020-04-03T11:52:09Z         # ten minutes later
+my $a = Interval.new(2020,1,1,0,0,0);   # from 2020, interval of 1 hour
+say $a;  # 2020-01-01T00:00:00Z
+$a++;    # 2020-01-01T01:00:00Z         # one hour later
+say $a.seconds;  # 3600
+
+my $b = Interval[60].new(time);         # from now, interval of 1 minute
+say $b;  # 2020-04-03T11:42:09Z
+$b += 10;
+say $b;  # 2020-04-03T11:52:09Z         # ten minutes later
+
+use Interval :refine;   # lexical refinement of the DateTime class
+
+my $c = DateTime[60].new(time);         # from now, interval of 1 minute
+say $c;  # 2020-04-03T11:42:09Z
+$c += 10;
+say $c;  # 2020-04-03T11:52:09Z         # ten minutes later
+
+=end code
 
 =head1 DESCRIPTION
 
@@ -56,6 +69,17 @@ series (aka C<...>).  Or allow it to be incremented or decremented to get
 to after the interval.  Or add / subtract a given number of intervals.
 
 The parameterization value is in seconds and defaults to C<3600>, aka 1 hour.
+
+=head1 LEXICAL REFINEMENT
+
+You can also use the C<Interval> class with the C<:refine> parameter.  This
+will "augment" the C<DateTime> class in the lexical scope in which the C<use>
+statement is located.  This allows one to not to have to change existing code
+using the C<DateTime> class, while still having the added functionality of
+the C<Interval> class.
+
+Please note that the use of lexical refinement is an experiment for now, until
+it has proven its worth.
 
 =head1 METHODS
 
@@ -75,10 +99,14 @@ Returns the number of seconds of the interval.
 
 =head1 infix:<+>
 
-  my $b = Interval[60].new(time);         # from now, interval of 1 minute
-  say $b;  # 2020-04-03T11:42:09Z
-  $b += 10;
-  say $b;  # 2020-04-03T11:52:09Z         # ten minutes later
+=begin code :lang<raku>
+
+my $b = Interval[60].new(time);         # from now, interval of 1 minute
+say $b;  # 2020-04-03T11:42:09Z
+$b += 10;
+say $b;  # 2020-04-03T11:52:09Z         # ten minutes later
+
+=end code
 
 Allows adding a number of steps of the interval;
 
