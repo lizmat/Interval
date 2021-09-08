@@ -1,6 +1,6 @@
 use v6.d;
 
-class Interval:ver<0.0.4>:auth<auth:lizmat> is DateTime {
+class Interval:ver<0.0.5>:auth<zef:lizmat> is DateTime {
     my \interval = Duration.new(3600);
     method succ(::?CLASS:D:) { self + interval }
     method pred(::?CLASS:D:) { self - interval }
