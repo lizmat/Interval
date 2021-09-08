@@ -1,6 +1,6 @@
 use v6.d;
 
-class Interval:ver<0.0.3>:auth<cpan:ELIZABETH> is DateTime {
+class Interval:ver<0.0.4>:auth<auth:lizmat> is DateTime {
     my \interval = Duration.new(3600);
     method succ(::?CLASS:D:) { self + interval }
     method pred(::?CLASS:D:) { self - interval }
@@ -116,14 +116,14 @@ Allows subtracting a number of steps of the interval;
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/Interval .
 Comments and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2020,2021 Elizabeth Mattijsen
+Copyright 2020, 2021 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
