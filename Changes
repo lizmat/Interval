@@ -1,6 +1,8 @@
 Revision history for Interval
 
 {{$NEXT}}
+
+0.0.6  2024-09-23T14:57:42+02:00
     - Add sponsor button and link
     - Add CI badges for each OS
     - Modernize test file extension
