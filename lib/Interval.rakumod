@@ -1,6 +1,6 @@
 use v6.d;
 
-class Interval:ver<0.0.5>:auth<zef:lizmat> is DateTime {
+class Interval is DateTime {
     my \interval = Duration.new(3600);
     method succ(::?CLASS:D:) { self + interval }
     method pred(::?CLASS:D:) { self - interval }
@@ -108,11 +108,11 @@ say $b;  # 2020-04-03T11:52:09Z         # ten minutes later
 
 =end code
 
-Allows adding a number of steps of the interval;
+Allows adding a number of steps of the interval.
 
 =head1 infix:<->
 
-Allows subtracting a number of steps of the interval;
+Allows subtracting a number of steps of the interval.
 
 =head1 AUTHOR
 
@@ -121,9 +121,13 @@ Elizabeth Mattijsen <liz@raku.rocks>
 Source can be located at: https://github.com/lizmat/Interval .
 Comments and Pull Requests are welcome.
 
+If you like this module, or what I'm doing more generally, committing to a
+L<small sponsorship|https://github.com/sponsors/lizmat/>  would mean a great
+deal to me!
+
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2020, 2021 Elizabeth Mattijsen
+Copyright 2020, 2021, 2024 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

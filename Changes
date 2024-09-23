@@ -1,6 +1,10 @@
 Revision history for Interval
 
 {{$NEXT}}
+    - Add sponsor button and link
+    - Add CI badges for each OS
+    - Modernize test file extension
+    - Update copyright year
 
 0.0.5  2021-09-08T13:25:00+02:00
     - Argh, fix broken auth string

@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/lizmat/Interval/actions/workflows/linux.yml/badge.svg)](https://github.com/lizmat/Interval/actions) [![Actions Status](https://github.com/lizmat/Interval/actions/workflows/macos.yml/badge.svg)](https://github.com/lizmat/Interval/actions) [![Actions Status](https://github.com/lizmat/Interval/actions/workflows/windows.yml/badge.svg)](https://github.com/lizmat/Interval/actions)
+
 NAME
 ====
 
@@ -72,12 +74,12 @@ $b += 10;
 say $b;  # 2020-04-03T11:52:09Z         # ten minutes later
 ```
 
-Allows adding a number of steps of the interval;
+Allows adding a number of steps of the interval.
 
 infix:<->
 =========
 
-Allows subtracting a number of steps of the interval;
+Allows subtracting a number of steps of the interval.
 
 AUTHOR
 ======
@@ -86,10 +88,12 @@ Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/Interval . Comments and Pull Requests are welcome.
 
+If you like this module, or what I'm doing more generally, committing to a [small sponsorship](https://github.com/sponsors/lizmat/) would mean a great deal to me!
+
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2020, 2021 Elizabeth Mattijsen
+Copyright 2020, 2021, 2024 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
