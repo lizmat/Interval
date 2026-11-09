@@ -7,7 +7,6 @@ Interval - a DateTime that has intervals
 =head1 SYNOPSIS
 
 =begin code :lang<raku>
-
 use Interval;          # just export the Interval class
 
 my $a = Interval.new(2020,1,1,0,0,0);   # from 2020, interval of 1 hour
@@ -26,7 +25,6 @@ my $c = DateTime[60].new(time);         # from now, interval of 1 minute
 say $c;  # 2020-04-03T11:42:09Z
 $c += 10;
 say $c;  # 2020-04-03T11:52:09Z         # ten minutes later
-
 =end code
 
 =head1 DESCRIPTION
@@ -69,12 +67,10 @@ Returns the number of seconds of the interval.
 =head1 infix:<+>
 
 =begin code :lang<raku>
-
 my $b = Interval[60].new(time);         # from now, interval of 1 minute
 say $b;  # 2020-04-03T11:42:09Z
 $b += 10;
 say $b;  # 2020-04-03T11:52:09Z         # ten minutes later
-
 =end code
 
 Allows adding a number of steps of the interval.
@@ -87,7 +83,7 @@ Allows subtracting a number of steps of the interval.
 
 Elizabeth Mattijsen <liz@raku.rocks>
 
-Source can be located at: https://github.com/lizmat/Interval .
+Source can be located at: https://codeberg.org/lizmat/Interval .
 Comments and Pull Requests are welcome.
 
 If you like this module, or what I'm doing more generally, committing to a
@@ -96,7 +92,7 @@ deal to me!
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2020, 2021, 2024, 2025 Elizabeth Mattijsen
+Copyright 2020, 2021, 2024, 2026 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

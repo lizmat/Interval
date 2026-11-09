@@ -10,14 +10,20 @@
   "description": "a DateTime that has intervals",
   "license": "Artistic-2.0",
   "name": "Interval",
-  "perl": "6.c",
   "provides": {
     "Interval": "lib/Interval.rakumod"
   },
+  "raku": "6.c",
   "resources": [
   ],
-  "source-url": "https://github.com/lizmat/Interval.git",
+  "source-url": "https://codeberg.org/lizmat/Interval.git",
+  "support": {
+    "bugtracker": "https://codeberg.org/lizmat/Interval/issues",
+    "email": "liz@raku.rocks",
+    "source": "https://codeberg.org/lizmat/Interval.git"
+  },
   "tags": [
+    "TIME",
     "UTILS"
   ],
   "test-depends": [
